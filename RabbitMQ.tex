@@ -1,0 +1,26 @@
+\section{RabbitMQ}
+From \href{http://www.rabbitmq.com/}{RabbitMQ.com}: \hfill \\
+RabbitMQ is the most widely deployed open source message broker.  RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements. 
+
+	\subsection{Data storage in RabbitMQ}
+	RabbitMQ uses Mnesia database which is a distributed, soft real-time database management system written in the Erlang programming language.
+
+	\subsection{Default file locations}
+	\begin{description}
+		\item[Home directory] /var/lib/rabbitmq \\
+		\item[Database] \verb+$HOME/mnesia/rabbit@Terrier+ \\
+		\item[Logs] \verb+/var/log/rabbitmq+
+	\end{description}
+
+
+
+	\subsection{Starting, stopping}
+	\begin{description}
+		\item[Status] rabbitmqctl status
+		\item[Start] rabbitmq-server start
+		\item[Stop] rabbitmqctl stop
+	\end{description}
+
+
+	\subsection{Monitoring}
+	If the web console is enabled, see \url{http://localhost:15672}, with user ``guest'', password ``guest''.

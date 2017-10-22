@@ -1,0 +1,35 @@
+\section{Mnesia: A primer}
+	\subsection{What is Mnesia?}
+Mnesia database is a distributed, soft real-time database management system written in the Erlang programming language
+
+	\subsection{How does it store messages?}
+
+
+
+	\subsection{What are the files in Mnesia directory?}
+	In the directory \verb+$HOME/mnesia/rabbit@Terrier+, see example files contained below:
+	\begin{verbatim}
+○ → sudo ls -l mnesia/rabbit@Terrier
+total 92
+-rw-r--r-- 1 rabbitmq rabbitmq    37 Oct 22  2017 cluster_nodes.config
+-rw-r--r-- 1 rabbitmq rabbitmq   154 Oct 22  2017 DECISION_TAB.LOG
+-rw-r--r-- 1 rabbitmq rabbitmq   152 Oct 22  2017 LATEST.LOG
+drwxr-xr-x 2 rabbitmq rabbitmq  4096 Oct 22  2017 msg_store_persistent
+drwxr-xr-x 2 rabbitmq rabbitmq  4096 Oct 22  2017 msg_store_transient
+-rw-r--r-- 1 rabbitmq rabbitmq    18 Oct 22  2017 nodes_running_at_shutdown
+-rw-r--r-- 1 rabbitmq rabbitmq  1179 Oct 22  2017 rabbit_durable_exchange.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq     8 Oct 19 23:27 rabbit_durable_queue.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq     8 Oct 19 23:27 rabbit_durable_route.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq     8 Oct 19 23:27 rabbit_runtime_parameters.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq     3 Oct 22  2017 rabbit_serial
+-rw-r--r-- 1 rabbitmq rabbitmq   224 Oct 22  2017 rabbit_user.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq   187 Oct 22  2017 rabbit_user_permission.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq   128 Oct 22  2017 rabbit_vhost.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq  5464 Oct 22  2017 recovery.dets
+-rw-r--r-- 1 rabbitmq rabbitmq 23309 Oct 19 23:27 schema.DAT
+-rw-r--r-- 1 rabbitmq rabbitmq   285 Oct 19 23:27 schema_version
+\end{verbatim}
+
+
+	\subsection{Recovering a corrupted Mnesia database}
+	See \url{http://erlang.org/pipermail/erlang-questions/2009-November/047302.html}, maybe try deleting LATEST.LOG and PREVIOUS.LOG
