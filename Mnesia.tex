@@ -10,24 +10,42 @@ Mnesia database is a distributed, soft real-time database management system writ
 	In the directory \verb+$HOME/mnesia/rabbit@Terrier+, see example files contained below:
 	\begin{verbatim}
 ○ → sudo ls -l mnesia/rabbit@Terrier
-total 92
--rw-r--r-- 1 rabbitmq rabbitmq    37 Oct 22  2017 cluster_nodes.config
--rw-r--r-- 1 rabbitmq rabbitmq   154 Oct 22  2017 DECISION_TAB.LOG
--rw-r--r-- 1 rabbitmq rabbitmq   152 Oct 22  2017 LATEST.LOG
-drwxr-xr-x 2 rabbitmq rabbitmq  4096 Oct 22  2017 msg_store_persistent
-drwxr-xr-x 2 rabbitmq rabbitmq  4096 Oct 22  2017 msg_store_transient
--rw-r--r-- 1 rabbitmq rabbitmq    18 Oct 22  2017 nodes_running_at_shutdown
--rw-r--r-- 1 rabbitmq rabbitmq  1179 Oct 22  2017 rabbit_durable_exchange.DCD
--rw-r--r-- 1 rabbitmq rabbitmq     8 Oct 19 23:27 rabbit_durable_queue.DCD
--rw-r--r-- 1 rabbitmq rabbitmq     8 Oct 19 23:27 rabbit_durable_route.DCD
--rw-r--r-- 1 rabbitmq rabbitmq     8 Oct 19 23:27 rabbit_runtime_parameters.DCD
--rw-r--r-- 1 rabbitmq rabbitmq     3 Oct 22  2017 rabbit_serial
--rw-r--r-- 1 rabbitmq rabbitmq   224 Oct 22  2017 rabbit_user.DCD
--rw-r--r-- 1 rabbitmq rabbitmq   187 Oct 22  2017 rabbit_user_permission.DCD
--rw-r--r-- 1 rabbitmq rabbitmq   128 Oct 22  2017 rabbit_vhost.DCD
--rw-r--r-- 1 rabbitmq rabbitmq  5464 Oct 22  2017 recovery.dets
+total 100
+-rw-r--r-- 1 rabbitmq rabbitmq    37 Oct 22 12:31 cluster_nodes.config
+-rw-r--r-- 1 rabbitmq rabbitmq   154 Oct 22 12:34 DECISION_TAB.LOG
+-rw-r--r-- 1 rabbitmq rabbitmq    93 Oct 22 12:34 LATEST.LOG
+drwxr-xr-x 2 rabbitmq rabbitmq  4096 Oct 22 12:31 msg_store_persistent
+drwxr-xr-x 2 rabbitmq rabbitmq  4096 Oct 22 12:31 msg_store_transient
+-rw-r--r-- 1 rabbitmq rabbitmq    18 Oct 22 12:31 nodes_running_at_shutdown
+drwxr-xr-x 3 rabbitmq rabbitmq  4096 Oct 22 12:23 queues
+-rw-r--r-- 1 rabbitmq rabbitmq  1179 Oct 22 11:13 rabbit_durable_exchange.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq   239 Oct 22 12:31 rabbit_durable_queue.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq   313 Oct 22 12:34 rabbit_durable_queue.DCL
+-rw-r--r-- 1 rabbitmq rabbitmq   217 Oct 22 12:31 rabbit_durable_route.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq   157 Oct 22 12:23 rabbit_runtime_parameters.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq     3 Oct 22 12:31 rabbit_serial
+-rw-r--r-- 1 rabbitmq rabbitmq   224 Oct 22 11:13 rabbit_user.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq   187 Oct 22 11:13 rabbit_user_permission.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq   128 Oct 22 11:13 rabbit_vhost.DCD
+-rw-r--r-- 1 rabbitmq rabbitmq  5464 Oct 22 12:31 recovery.dets
 -rw-r--r-- 1 rabbitmq rabbitmq 23309 Oct 19 23:27 schema.DAT
 -rw-r--r-- 1 rabbitmq rabbitmq   285 Oct 19 23:27 schema_version
+\end{verbatim}
+
+And then the queues storage (this directory might not exist if no durable queues have been declared/created):
+\begin{verbatim}
+○ → sudo ls -l mnesia/rabbit@Terrier/queues
+total 4
+drwxr-xr-x 2 rabbitmq rabbitmq 4096 Oct 22 12:37 64ICZ3BYFM8TFZZPG2P47G0Z5
+\end{verbatim}
+
+What's in the queue?
+\begin{verbatim}
+ 2017-10-22 12:48:03 ☆  Terrier in /var/lib/rabbitmq
+○ → sudo ls -l mnesia/rabbit@Terrier/queues/64ICZ3BYFM8TFZZPG2P47G0Z5
+total 24
+-rw-r--r-- 1 rabbitmq rabbitmq 22980 Oct 22 12:48 1.idx
+-rw-r--r-- 1 rabbitmq rabbitmq     0 Oct 22 12:48 journal.jif
 \end{verbatim}
 
 

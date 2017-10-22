@@ -24,3 +24,9 @@ RabbitMQ is the most widely deployed open source message broker.  RabbitMQ is li
 
 	\subsection{Monitoring}
 	If the web console is enabled, see \url{http://localhost:15672}, with user ``guest'', password ``guest''.
+
+	\subsection{CLI}
+	View messages left:
+	\begin{lstlisting}
+	sudo rabbitmqctl list_queues name messages_ready messages_unacknowledged
+	\end{lstlisting}
